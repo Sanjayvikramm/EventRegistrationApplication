@@ -1,0 +1,84 @@
+body{
+    background-color: rgb(0, 85, 67);
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    height: 200px;
+    width: 300px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(241, 234, 234);
+    padding-top: 100px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(6, 223, 176);
+    border-width: 1px;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+h1{
+    color: rgb(12, 190, 131);
+    margin-top: -60px;
+}
+.label1{
+    font-size: 22px;
+    font-weight: bolder;
+}
+#email{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    border-radius: 10px;
+    border-color: black;
+    height: 20px;
+   
+
+
+}
+#emailtxt{
+    margin-bottom: 100px;
+}
+#password{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    border-radius: 10px;
+    border-color: black;
+    height: 20px;
+
+}
+.button{
+    margin-top: 10px;
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 5px;
+    background-color:rgb(0, 85, 67) ;
+    color: white;
+    border:none;
+    width: 70px;
+    height:30px
+}
+.button:hover
+{
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+
+
+
+
+
+

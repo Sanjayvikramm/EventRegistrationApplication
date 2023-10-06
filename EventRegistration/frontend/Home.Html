@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="Home.css">
+</head>
+
+<body>
+  <div class="head">
+    <h1>Event Registration</h1>
+    <input onclick="window.location.href='SignIn.html'" class="logout" type="button" value="Log Out">
+    <input class="profile" type="button" value="Profile">
+  </div>
+
+  <div class="pannel">
+    <input onclick="window.location.href='createEvent.html'" class="pannelbuttons" type="button" value="Create Event">
+    <input class="pannelbuttons" type="button" value="My Events" id="updateEvents">
+    <input class="pannelbuttons" type="button" value="All Events" id="allEvents">
+    <input class="pannelbuttons" type="button" value="Open Events" id="openEvents">
+    <input class="pannelbuttons" type="button" value="Registered Events" id="registeredEvents">
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const email = urlParams.get('email');
+      console.log(email)
+      localStorage.setItem("email", email);
+    });
+    const updateEvents = document.getElementById("updateEvents");
+    updateEvents.addEventListener("click", function() {
+
+      fetch('http://localhost:8080/event/myEvent')
+        .then(response => response.json())
+        .then(events => {
+          const eventDataString = encodeURIComponent(JSON.stringify(events.listData));
+          console.log(eventDataString)
+          window.location.href = `MyEvents.html?eventData=${eventDataString}`;
+        })
+        .catch(error => {
+
+          console.error('Error fetching events:', error);
+        });
+    });
+    const openEvent = document.getElementById("openEvents");
+    openEvent.addEventListener("click", function() {
+
+      fetch('http://localhost:8080/event/openEvent')
+        .then(response => response.json())
+        .then(events => {
+          const eventDataString = encodeURIComponent(JSON.stringify(events.listData));
+          console.log(eventDataString)
+          window.location.href = `OpenEvents.html?eventData=${eventDataString}`;
+        })
+        .catch(error => {
+
+          console.error('Error fetching events:', error);
+        });
+    });
+
+    const allEvents = document.getElementById("allEvents");
+    allEvents.addEventListener("click", function() {
+
+      fetch('http://localhost:8080/event/allEvent')
+        .then(response => response.json())
+        .then(events => {
+          const eventDataString = encodeURIComponent(JSON.stringify(events.listData));
+          console.log(eventDataString)
+          window.location.href = `AllEvents.html?eventData=${eventDataString}`;
+        })
+        .catch(error => {
+
+          console.error('Error fetching events:', error);
+        });
+    });
+    const registeredEvents = document.getElementById("registeredEvents");
+    registeredEvents.addEventListener("click", function() {
+
+      fetch('http://localhost:8080/user/viewRegisterEvent')
+        .then(response => response.json())
+        .then(events => {
+          const eventDataString = encodeURIComponent(JSON.stringify(events.listData));
+          console.log(events.listData)
+          console.log(eventDataString)
+          window.location.href = `RegisteredEvent.html?eventData=${eventDataString}`;
+        })
+        .catch(error => {
+
+          console.error('Error fetching events:', error);
+        });
+    });
+  </script>
+</body>
+
+</html>

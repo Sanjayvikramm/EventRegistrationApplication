@@ -1,0 +1,44 @@
+body {
+    background-color: rgb(0, 85, 67);
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.all {
+    height: 300px;
+    width: 400px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: rgb(241, 234, 234);
+    padding-top: 40px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(6, 223, 176);
+    border-width: 1px;
+}
+.title{
+    background-color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 50px;
+
+}
+table{
+    background-color: white;
+    padding-left: 5px;
+    margin-left: 30px;
+}
+td{
+    background-color: white;
+    padding-right: 5px;
+    margin-left: auto;
+}
+input{
+    background-color: white;
+    border-radius: 4px;
+}

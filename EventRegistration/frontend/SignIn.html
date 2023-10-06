@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="SignIn.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Sign In</h1>
+    <form id="form">
+      <label for="email" class="label1">User Name</label><br>
+      <input type="email" id="email" name="email" placeholder="Enter The UserName"><br>
+      <label for="password" class="label1">Password</label><br>
+      <input type="password" id="password" name="password" placeholder="Enter The Password"><br>
+      <input id="submitButton" type="submit" value="Sign in" class="button">
+      <a href="SignUp.html">Sign Up</a>
+    </form>
+  </div>
+  <script>
+    document.getElementById("form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var userRequest = {
+        userName: email,
+        password: password
+      };
+      fetch("Http://localhost:8080/user/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(userRequest)
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === 200) {
+            alert("Logged In")
+            window.location.href = `home.html?email=${encodeURIComponent(email)}`;
+
+          } else if (data.status === 400) {
+            alert("Password Incorrect")
+          } else if (data.rootCause === "Data Not Found") {
+            alert("Email Id Doesnt Exist")
+          }
+        })
+        .catch(error => {
+          console.error("Error:", error);
+        });
+    });
+  </script>
+</body>
+
+</html>

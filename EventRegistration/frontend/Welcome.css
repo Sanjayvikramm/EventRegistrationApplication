@@ -1,0 +1,59 @@
+body {
+    background-color: rgb(0, 85, 67);
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    height: 200px;
+    width: 300px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(241, 234, 234);
+    padding-top: 100px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(6, 223, 176);
+    border-width: 1px;
+}
+.signup{
+    height:40px;
+    width:80px;
+    border-radius: 50px;
+    margin-right: 50px;
+    border-style: none;
+    background-color:rgb(0, 85, 67) ;
+    color: white;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+}
+.signup:hover{
+    opacity:0.7;
+}
+.signin{
+    height:40px;
+    width:80px;
+    border-radius: 50px;
+    margin-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color:rgb(0, 85, 67) ;
+    border-style: none;
+    font-weight: 600;
+    color: white;
+}
+.signin:hover{
+    opacity:0.7;
+}
+h1{
+color: rgb(12, 190, 131);
+margin-top: -20px;
+font-family: 'Courier New', Courier, monospace;
+
+}
+
